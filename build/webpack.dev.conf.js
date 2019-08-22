@@ -22,6 +22,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -42,7 +45,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
   },
   plugins: [
     new webpack.DefinePlugin({

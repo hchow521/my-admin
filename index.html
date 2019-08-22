@@ -3,17 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>my-blog</title>
-      <script>
-          let UA = window.navigator.userAgent.toLowerCase();
-          let isAndroid = UA.indexOf('android') > 0;
-          let isIOS = /iphone|ipad|ipod|ios/.test(UA);
-          if (!(isAndroid || isIOS)) {
-              // 正式发布的时候使用，开发期间不启用。
-               window.location.href = '/pc/index.html';
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="hchow <hchow521@163.com>">
+    <meta name="description" content="This is a sinple web admin page">
+    <meta name="robots" content="none">
+    <title>欢迎进入我的后台</title>
+    <!--[if lt IE 9]>
+    　　<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    　　<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <style>
+          /*html5*/
+          article,aside,dialog,footer,header,section,nav,figure,menu{display:block}
+        </style>
+    <![endif]-->
+    <link rel="stylesheet" href="./static/css/normalize.min.css">
+      <style>
+          html, body {
+              height: 100%;
+              width: 100%;
           }
-      </script>
-      <script type="text/javascript" src="./static/js/rem.js"></script>
+      </style>
   </head>
   <body>
     <div id="app"></div>
