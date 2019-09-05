@@ -4,7 +4,7 @@ import Vue from '../main'
 
 // axios 配置
 axios.defaults.timeout = 6000;
-axios.defaults.baseURL = process.env.BASE_URL || 'http://localhost:3000/api';//线上的http
+axios.defaults.baseURL = process.env.BASE_URL || 'https://hchow521.xyz:3000/api';//线上的http
 
 
 // http request 拦截器
@@ -33,7 +33,7 @@ error => {
                 // 这里写清除token的代码
                 Vue.$store.commit('loginout')
                 router.replace({
-                    path: '/login',
+                    path: '/',
                     query: {redirect: router.currentRoute.fullPath}//登录成功后跳入浏览的当前页面
                 })
               Vue.$message.error('请重新登录！');

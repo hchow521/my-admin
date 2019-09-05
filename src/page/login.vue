@@ -26,8 +26,8 @@
       return {
         welcome: '欢迎访问Hchow后台管理，请先登陆',
         loginForm: {
-          username: '',
-          userpsw: ''
+          username: 'hchow',
+          userpsw: '123456'
         },
         rules: {
           username: [
@@ -60,7 +60,7 @@
                 let data = res.data.data;
                 this.$message.success(`欢迎登陆 ${data.username}先生`);
                 this.$store.commit('login',data)
-                this.$router.replace('/');
+                this.$router.replace('/index');
               }
             })
           } else {

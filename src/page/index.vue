@@ -75,7 +75,7 @@
             <el-container>
                 <el-header>
                     <el-breadcrumb separator="/">
-                        <el-breadcrumb-item><router-link to="/">首页</router-link></el-breadcrumb-item>
+                        <el-breadcrumb-item><router-link to="/index">首页</router-link></el-breadcrumb-item>
                         <el-breadcrumb-item v-for="(item, index) in routernav" :key="index"><router-link :to="item.path">{{item.title}}</router-link></el-breadcrumb-item>
                     </el-breadcrumb>
                 </el-header>

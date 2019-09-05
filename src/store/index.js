@@ -6,7 +6,8 @@ export default new Vuex.Store(
     state: {
       token: window.localStorage.getItem('token') || '',
       username: window.localStorage.getItem('username') || '',
-      routernav: []
+      routernav: [],
+      apiURL: 'https://www.hchow521.xyz:3000'
     },
     getters: {
       usertoken: state => { return state.token },
@@ -29,8 +30,8 @@ export default new Vuex.Store(
         window.localStorage.clear();
       },
       addRouter (state, data) {//添加首页面包屑导航
-        //过滤路由
-        if (data.to.meta.title == '登陆' || data.to.meta.path == '/login' || !data.to.meta.title) return false;
+        //过滤路由(登录页和没有标题页都不添加到导航)
+        if (data.to.meta.title == '登陆' || data.to.meta.path == '/' || !data.to.meta.title) return false;
         const router = state.routernav,
           to = data.to,
           from = data.from;

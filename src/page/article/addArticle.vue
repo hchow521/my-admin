@@ -10,7 +10,7 @@
                 <el-upload
                         class="avatar-uploader"
                         accept='image/jpeg,image/gif,image/png'
-                        action="http://localhost:3000/upload"
+                        :action="action + '/upload'"
                         :show-file-list="false"
                         :headers="httpHeaders"
                         :on-success="handleAvatarSuccess"
@@ -159,12 +159,17 @@
           'Cache-Control': 'no-cache'
         }
       },
+
+      action () {
+        return this.$store.state.apiURL
+        // return 'http://localhost:3000'
+      }
     },
     methods: {
       handleAvatarSuccess(res, file) {
         console.log(res, file)
         if (res.state == 1) {
-          this.articleForm.headCover = 'http://localhost:3000/' + res.data.path + res.data.filename;
+          this.articleForm.headCover = this.action +'/' + res.data.path + res.data.filename;
         }
       },
       dataURItoBlob(dataURI, type) {

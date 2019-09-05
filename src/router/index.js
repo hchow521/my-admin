@@ -22,6 +22,14 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: Login,
+      meta: {
+        title: '登陆'
+      }
+    },
+    {
+      path: '/index',
       name: 'index',
       component: Index,
       redirect: '/systemInfo',
@@ -76,22 +84,17 @@ const router = new Router({
           component: ArticleView
         }
       ]
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login,
-      meta: {
-        title: '登陆'
-      }
     }
   ]
 })
 
 
 router.beforeEach((to, from, next) => {
-  if (!store.getters.usertoken && to.path !== '/login') { // 判断是否有token并需要登录
-    next({path: '/login'});
+  if (!store.getters.usertoken && to.name !== 'login') { // 判断是否有token并需要登录
+    next('/');
+  }
+  if (store.getters.usertoken && to.name === 'login') {
+    next('/index');
   }
   store.commit('addRouter', { to, from });
   next();
