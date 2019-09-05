@@ -2,8 +2,7 @@
  
  > 一个 vue-cli + elementUI + vue-quill-editor 博客后台
  >
-******请搭配我搭建的后端服务器体验功能，不然你只能看个登陆页面，链接在下面↓******
-
+#demo[https://m.hchow521.xyz]
 ###### 后台服务器node+express+mongoose [https://github.com/hchow521/my-app]
 ## 前台目录
 
