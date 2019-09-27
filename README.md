@@ -1,6 +1,6 @@
 # my-blog-admin
  
- > 一个 vue-cli + elementUI + vue-quill-editor 博客后台
+ > 一个 vue-cli2.x + elementUI + vue-quill-editor 博客后台
  >
 #demo[https://m.hchow521.xyz]
 ###### 后台服务器node+express+mongoose [https://github.com/hchow521/my-app]
@@ -30,11 +30,13 @@ npm run dev(默认端口：8000)
 ## 技术总结？
 ##### 安装脚手架
 `
-npm install @vue/cli -g
+npm i -g vue-cli(vue-cli2.x)
+如果已装了vue-cli3.x
+npm i -g @vue/cli-init
 `
 ##### 创建vue项目
 ``` bash
-vue create my-project
+vue init webpack my-project
 cd my-project & npm install
 ```
 ##### 安装element-ui [https://element.eleme.cn/#/zh-CN/]
